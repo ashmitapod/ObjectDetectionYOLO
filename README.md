@@ -1,25 +1,24 @@
 # 🧠 YOLO Real-Time Object Detection
 
-This project uses the **YOLOv3** algorithm to perform **real-time object detection** on video files and live webcam feeds.  
-It’s built with **Python**, **OpenCV**, and **pre-trained YOLO weights**.
+This project uses the **YOLOv3** algorithm to perform real-time object detection on video files and live webcam feeds. It's built in **Python** using **OpenCV** and pre-trained YOLO weights.
 
 ---
 
 ## 🚀 Features
 
--  **Real-Time Detection:** Detects multiple objects live from your webcam.  
-- **Video File Processing:** Supports object detection on saved video files.  
-- **Command-Line Interface:** Easily switch between webcam and video sources using CLI arguments.  
-- **Save Screenshots:** Press **`s`** during detection to save the current frame as an image.  
-- **Quit Anytime:** Press **`q`** to exit detection mode.
+* **Real-Time Detection:** Identifies objects in live webcam feeds.
+* **Video File Processing:** Can analyze and detect objects in pre-recorded video files.
+* **Optional Region of Interest (ROI):** Activate a specific detection zone. Only objects inside the ROI will be counted and highlighted.
+* **Dynamic Object Counting:** Displays a live count of all detected objects (or just those in the ROI).
+* **Save Screenshots:** Press the `'s'` key during detection to save the current labeled frame to an **outputs/** folder.
 
 ---
 
 ## 🧩 Requirements
 
-- Python **3.6+**
-- **OpenCV**
-- **NumPy**
+* Python 3.6+
+* OpenCV
+* NumPy
 
 Install dependencies:
 
@@ -29,91 +28,110 @@ pip install numpy opencv-python
 
 ---
 
-## 📁 Setup
+## ⚙️ Setup
 
-1. **Clone the repository:**
+Run these commands from your **main project directory** (e.g., `YOLO-Real-Time-Object-Detection`).
 
-```bash
-git clone https://github.com/yourusername/YOLO-RealTime-ObjectDetection.git
-cd YOLO-RealTime-ObjectDetection
-```
-
-2. **Create folders:**
+### Download YOLOv3 weights (236 MB)
 
 ```bash
-mkdir weights cfg
+curl -L -o weights/yolov3.weights "https://pjreddie.com/media/files/yolov3.weights"
 ```
 
-3. **Download YOLOv3 model files:**
+### Download YOLOv3 config
 
-| File Type | File Name | Destination Folder | Download Link |
-|------------|------------|--------------------|----------------|
-| Weights | `yolov3.weights` | `weights/` | [Download Here](https://pjreddie.com/media/files/yolov3.weights) |
-| Config | `yolov3.cfg` | `cfg/` | [Download Here](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg) |
-| COCO Labels | `coco.names` | `cfg/` | [Download Here](https://github.com/pjreddie/darknet/blob/master/data/coco.names) |
+```bash
+curl -L -o cfg/yolov3.cfg "https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg"
+```
+
+### Download YOLOv3-Tiny weights (34 MB)
+
+```bash
+curl -L -o weights/yolov3-tiny.weights "https://pjreddie.com/media/files/yolov3-tiny.weights"
+```
+
+### Download YOLOv3-Tiny config
+
+```bash
+curl -L -o cfg/yolov3-tiny.cfg "https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3-tiny.cfg"
+```
+
+Make sure you have these folders:
+
+```
+YOLO-Real-Time-Object-Detection/
+│
+├── main.py
+├── cfg/
+│   ├── yolov3.cfg
+│   └── yolov3-tiny.cfg
+├── weights/
+│   ├── yolov3.weights
+│   └── yolov3-tiny.weights
+├── coco.names
+└── outputs/
+```
 
 ---
 
 ## ▶️ How to Use
 
-All detection functionality is handled by the **`main.py`** script.
+### 1️⃣ Use your webcam (Standard Mode)
 
-### 🟢 Use Your Webcam
+This detects and counts all objects in the full frame.
 
 ```bash
 python main.py --source webcam
 ```
 
-> If no source is provided, the program defaults to the webcam.
+### 2️⃣ Use your webcam (ROI Mode)
 
-### 🎥 Detect Objects in a Video File
+Add the `--roi` flag to activate the detection zone. Only objects inside the blue box will be counted and highlighted.
+
+```bash
+python main.py --source webcam --roi
+```
+
+### 3️⃣ Process a video file
+
+You can use the `--roi` flag with video files as well.
+
+**Standard mode:**
 
 ```bash
 python main.py --source usa-street.mp4
 ```
-or
+
+**ROI mode:**
+
 ```bash
-python main.py --source uk.mp4
-```
-
-### 💾 Save a Frame
-
-While detection is running:
-
-- Press **`s`** → Save the current frame as an image  
-- Press **`q`** → Quit the detection window
-
----
-
-## 🧠 How It Works
-
-1. The YOLOv3 model divides the input image into grids.
-2. Each grid predicts bounding boxes and class probabilities.
-3. The script uses **OpenCV’s DNN module** to load and run YOLOv3.
-4. Detected objects are drawn with bounding boxes and labels in real-time.
-
----
-
-## 🧱 Project Structure
-
-```
-YOLO-RealTime-ObjectDetection/
-│
-├── main.py
-├── cfg/
-│   ├── yolov3.cfg
-│   └── coco.names
-├── weights/
-│   └── yolov3.weights
-├── outputs/
-│   └── (saved screenshots)
-└── README.md
+python main.py --source usa-street.mp4 --roi
 ```
 
 ---
 
-## 📸 Example Output
+## 💾 Saving Frames
 
+While the detection window is open:
 
-![alt text](outputs/capture_2025-10-10_11-33-07.jpg)
+* Press **`s`** → Save a screenshot to `outputs/`
+* Press **`q`** → Quit the program
 
+Screenshots will be automatically saved as:
+
+```
+outputs/capture_YYYY-MM-DD_HH-MM-SS.jpg
+```
+
+---
+
+## 📚 Notes
+
+* Make sure `coco.names` is present in the main folder.
+* Default detection threshold: 0.5
+* Non-maximum suppression threshold: 0.4
+
+---
+
+**Project:** YOLO Real-Time Object Detection
+**Built with:** Python, OpenCV, YOLOv3
