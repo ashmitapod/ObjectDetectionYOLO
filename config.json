@@ -1,0 +1,41 @@
+{
+  "email": {
+    "enabled": false,
+    "sender": "your_email@gmail.com",
+    "password": "your_app_password_here",
+    "receiver": "receiver_email@gmail.com",
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587
+  },
+  "detection": {
+    "confidence_threshold": 0.5,
+    "nms_threshold": 0.4,
+    "alert_objects": ["person", "car", "truck", "bicycle"],
+    "record_duration": 10,
+    "alert_cooldown": 300
+  },
+  "roi_zones": [
+    {
+      "name": "Entrance",
+      "x": 400,
+      "y": 100,
+      "width": 250,
+      "height": 350,
+      "color": [255, 200, 100]
+    },
+    {
+      "name": "Parking Area",
+      "x": 100,
+      "y": 300,
+      "width": 200,
+      "height": 200,
+      "color": [100, 255, 200]
+    }
+  ],
+  "model": {
+    "weights": "weights/yolov3.weights",
+    "config": "cfg/yolov3.cfg",
+    "names": "coco.names",
+    "use_gpu": false
+  }
+}

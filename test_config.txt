@@ -1,0 +1,19 @@
+# Test Configuration
+# Edit main.py EMAIL_CONFIG section for your email settings
+
+EMAIL_SETTINGS:
+  sender: your_email@gmail.com
+  password: your_app_password
+  receiver: alert_email@gmail.com
+
+ROI_ZONES:
+  - name: Test Zone
+    x: 400
+    y: 100
+    width: 250
+    height: 350
+
+ALERT_OBJECTS:
+  - person
+  - car
+  - truck
