@@ -1,31 +1,31 @@
-# 🎯 Advanced YOLO Object Detection System
+# Advanced YOLO Object Detection System
 
 A comprehensive real-time object detection system with ROI monitoring, email alerts, video recording, and analytics dashboard.
 
-## ✨ Features
+## Features
 
 ### Core Features
-- ✅ **Real-time Object Detection** using YOLOv3
-- ✅ **Multiple ROI Zones** - Monitor different areas simultaneously
-- ✅ **Smart Email Alerts** - Get notified with video clips when specific objects detected
-- ✅ **Video Recording** - Automatic clip generation with pre/post event buffer
-- ✅ **Multi-source Support** - Webcam, video files, or RTSP streams
-- ✅ **Object Counting** - Track detections in real-time
-- ✅ **Detection Logging** - CSV logs for data analysis
-- ✅ **Analytics Dashboard** - Generate visual reports and insights
+-  **Real-time Object Detection** using YOLOv3
+-  **Multiple ROI Zones** - Monitor different areas simultaneously
+-  **Smart Email Alerts** - Get notified with video clips when specific objects detected
+-  **Video Recording** - Automatic clip generation with pre/post event buffer
+-  **Multi-source Support** - Webcam, video files, or RTSP streams
+-  **Object Counting** - Track detections in real-time
+-  **Detection Logging** - CSV logs for data analysis
+-  **Analytics Dashboard** - Generate visual reports and insights
 
 ### Advanced Features
-- 🔥 Configurable detection sensitivity
-- 🔥 Alert cooldown to prevent spam
-- 🔥 Selective object filtering
-- 🔥 Pre-event recording buffer
-- 🔥 FPS counter and performance monitoring
-- 🔥 Screenshot capture functionality
-- 🔥 Headless mode for server deployment
+-  Configurable detection sensitivity
+-  Alert cooldown to prevent spam
+-  Selective object filtering
+-  Pre-event recording buffer
+-  FPS counter and performance monitoring
+-  Screenshot capture functionality
+-  Headless mode for server deployment
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 ### System Requirements
 - Python 3.7+
@@ -53,7 +53,7 @@ Download and place in respective folders:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
@@ -75,7 +75,7 @@ project/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Basic Detection (Webcam)
 ```bash
@@ -99,7 +99,7 @@ python main.py --roi --email --alert-objects person,car
 
 ---
 
-## 🎛️ Command Line Options
+## Command Line Options
 
 | Option | Description | Default |
 |--------|-------------|---------|
@@ -131,7 +131,7 @@ python main.py --roi --email --no-display
 
 ---
 
-## 📧 Email Setup (Gmail)
+## Email Setup (Gmail)
 
 ### Step 1: Enable 2-Factor Authentication
 1. Go to [Google Account Security](https://myaccount.google.com/security)
@@ -158,7 +158,7 @@ EMAIL_CONFIG = {
 
 ---
 
-## 🎯 ROI Configuration
+## ROI Configuration
 
 ### Editing ROI Zones (main.py, lines 49-53)
 
@@ -181,7 +181,7 @@ ROI_ZONES = [
 
 ---
 
-## 📊 Analytics Dashboard
+## Analytics Dashboard
 
 ### Generate Reports
 ```bash
@@ -201,7 +201,7 @@ python analytics_viewer.py
 
 ---
 
-## ⌨️ Keyboard Controls
+## Keyboard Controls
 
 | Key | Action |
 |-----|--------|
@@ -210,27 +210,27 @@ python analytics_viewer.py
 
 ---
 
-## 🎓 For CSE Students - Project Enhancement Tips
+## For CSE Students - Project Enhancement Tips
 
 ### What Makes This Project Stand Out:
 
-#### 1. **Multi-Feature Integration** ✅
+#### 1. **Multi-Feature Integration** 
 - Not just detection - full monitoring system
 - Email alerts show real-world application
 - Logging demonstrates data management skills
 
-#### 2. **Professional Code Quality** ✅
+#### 2. **Professional Code Quality** 
 - Well-structured with comments
 - Command-line arguments for flexibility
 - Error handling and threading
 - Modular design
 
-#### 3. **Analytics Component** ✅
+#### 3. **Analytics Component** 
 - Shows data science integration
 - Visualization with matplotlib
 - Pandas for data processing
 
-#### 4. **Documentation** ✅
+#### 4. **Documentation** 
 - Complete README
 - Clear setup instructions
 - Usage examples
@@ -258,7 +258,7 @@ python analytics_viewer.py
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Issue: "Could not open video source"
 **Solution:** Check webcam permissions or verify video file path
@@ -288,7 +288,7 @@ pip install opencv-python numpy pandas matplotlib
 
 ---
 
-## 🚀 Advanced Configuration
+## Advanced Configuration
 
 ### Use GPU Acceleration
 Uncomment lines in `main.py`:
@@ -311,7 +311,7 @@ msg['To'] = ", ".join(["email1@gmail.com", "email2@gmail.com"])
 
 ---
 
-## 📝 Detection Log Format
+## Detection Log Format
 
 CSV file structure (`outputs/logs/detections_YYYYMMDD.csv`):
 
@@ -326,7 +326,7 @@ CSV file structure (`outputs/logs/detections_YYYYMMDD.csv`):
 
 ---
 
-## 🎥 Video Clip Features
+## Video Clip Features
 
 ### Automatic Recording Triggers:
 - Starts when alert object detected in ROI
@@ -341,7 +341,7 @@ CSV file structure (`outputs/logs/detections_YYYYMMDD.csv`):
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Download YOLOv3 Weights:
 ```bash
@@ -360,7 +360,7 @@ wget https://pjreddie.com/media/files/yolov3-tiny.weights
 
 ---
 
-## 🤝 Contributors
+## Contributors
 
 **CSE Project Team**
 - Developed for academic purposes
@@ -369,13 +369,13 @@ wget https://pjreddie.com/media/files/yolov3-tiny.weights
 
 ---
 
-## 📄 License
+## License
 
 This project is for educational purposes. YOLO is licensed under the original authors' terms.
 
 ---
 
-## 💡 Future Enhancements
+## Future Enhancements
 
 - [ ] Web dashboard (Flask/Django)
 - [ ] Mobile app notifications
@@ -388,7 +388,7 @@ This project is for educational purposes. YOLO is licensed under the original au
 
 ---
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Check Troubleshooting section
@@ -396,14 +396,7 @@ For issues or questions:
 3. Verify all dependencies installed
 4. Check file paths and permissions
 
----
-
-**⭐ Pro Tip for Presentation:**
-*"Our system demonstrates end-to-end implementation from real-time detection to alert notification, showcasing skills in computer vision, threading, email protocols, data logging, and visualization - simulating a production-ready security monitoring solution."*
-
----
-
-## 🎯 Quick Commands Cheat Sheet
+## Quick Commands Cheat Sheet
 
 ```bash
 # Basic run
@@ -427,7 +420,3 @@ python analytics_viewer.py
 # Server mode
 python main.py --roi --email --no-display
 ```
-
----
-
-**Made with 💻 by CSE Students**
